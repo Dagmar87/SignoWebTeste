@@ -1,17 +1,17 @@
 module.exports = app => {
-    const votacoes = require("../controllers/votacao.controller.js");
+    const votacaos = require("../controllers/votacao.controller.js");
     var router = require("express").Router();
     // Criar uma nova enquente
-    router.post("/", votacoes.create);
+    router.post("/", votacaos.create);
     // Recuperar todas as enquentes
-    router.get("/", votacoes.findAll);
+    router.get("/", votacaos.findAll);
     // Recuperar uma única enquente com id
-    router.get("/:id", votacoes.findOne);
+    router.get("/:id", votacaos.findOne);
     // Atualizar uma enquente com id
-    router.put("/:id", votacoes.update);
+    router.put("/:id", votacaos.update);
     // Excluir uma enquente com id
-    router.delete("/:id", votacoes.delete);
+    router.delete("/:id", votacaos.delete);
     // Excluir todas as enquentes
-    router.delete("/", votacoes.deleteAll);
-    app.use('/api/votacoes', router);
+    router.delete("/", votacaos.deleteAll);
+    app.use('/api/votacaos', router);
 }

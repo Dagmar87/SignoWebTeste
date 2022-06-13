@@ -3,27 +3,23 @@ module.exports = (sequelize, Sequelize) => {
         titulo: {
             type: Sequelize.STRING
         },
+        opcaoU: {
+            type: Sequelize.STRING
+        },
+        opcaoD: {
+            type: Sequelize.STRING
+        },
+        opcaoT: {
+            type: Sequelize.STRING
+        },
+        situacao: {
+            type: Sequelize.BOOLEAN
+        },
         dataInicio: {
-            type: Sequelize.DATEONLY,
-            defaultValue: 'DD-MM-YYYY',
-            field: 'dataInicio'
+            type: Sequelize.DATEONLY
         },
         dataFim: {
-            type: Sequelize.DATEONLY,
-            defaultValue: 'DD-MM-YYYY',
-            field: 'dataFim'
-        },
-        resOp1: {
-            type: Sequelize.STRING
-        },
-        resOp2: {
-            type: Sequelize.STRING
-        },
-        resOp2: {
-            type: Sequelize.STRING
-        },
-        status: {
-            type: Sequelize.BOOLEAN
+            type: Sequelize.DATEONLY
         }
     });
     return Votacao;

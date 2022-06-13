@@ -1,5 +1,5 @@
 const db = require("../models");
-const Votacao = db.votacoes;
+const Votacao = db.votacaos;
 const Op = db.Sequelize.Op;
 
 exports.create = (req, res) => {
@@ -11,12 +11,12 @@ exports.create = (req, res) => {
   }
   const votacao = {
     titulo: req.body.titulo,
+    opcaoU: req.body.opcaoU,
+    opcaoD: req.body.opcaoD,
+    opcaoT: req.body.opcaoT,
+    situacao: req.body.situacao ? req.body.situacao : false,
     dataInicio: req.body.dataInicio,
-    dataFim: req.body.dataFim,
-    resOp1: res.data.resOp1,
-    resOp2: res.data.resOp2,
-    resOp3: res.data.resOp3,
-    status: res.data.status ? res.data.status : false,
+    dataFim: req.body.dataFim
   };
   Votacao.create(votacao)
     .then((data) => {

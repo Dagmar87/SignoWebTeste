@@ -1,1 +1,28 @@
-<p>votacao-list works!</p>
+<div class="list row">
+  <div class="col-md-6">
+    <div class="align-center text-center">
+      <h2>Lista de Enquentes</h2>
+    </div>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let votacao of votacaos; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveVotacao(votacao, i)"
+      >
+        <h2><strong>{{ votacao.titulo }}</strong></h2>
+        <br>
+        <p>Opções:</p>
+        <p>{{ votacao.opcaoU }}</p><input type="checkbox"><br>
+        <p>{{ votacao.opcaoD }}</p><input type="checkbox"><br>
+        <p>{{ votacao.opcaoT }}</p><input type="checkbox"><br>
+        <br>
+        <p>Essa enquente vai durar entre {{ votacao.dataInicio }} até {{ votacao.dataFim }}</p>
+        <Button class="btn btn-primary" routerLink="/votacaos/{{ currentVotacao.id }}">Editar</Button>
+      </li>
+    </ul>
+    <button class="m-3 btn btn-sm btn-danger" (click)="removeAllVotacaos()">
+      Excluir tudo
+    </button>
+  </div>
+</div>

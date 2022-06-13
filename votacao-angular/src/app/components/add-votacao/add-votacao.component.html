@@ -1,1 +1,81 @@
-<p>add-votacao works!</p>
+<div>
+  <div class="submit-form">
+    <div class="align-center text-center">
+      <h2>Detalhe da Enquente</h2>
+    </div>
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="nome">Titulo:</label>
+        <input
+          placeholder="Titulo"
+          type="text"
+          class="form-control"
+          id="titulo"
+          required
+          [(ngModel)]="votacao.titulo"
+          name="titulo"
+        />
+      </div>
+      <div class="form-group">
+        <label for="nome">Opções:</label>
+
+        <input
+          placeholder="Primeira"
+          type="text"
+          class="form-control"
+          id="opcaoU"
+          required
+          [(ngModel)]="votacao.opcaoU"
+          name="opcaoU"
+        />
+        <br>
+        <input
+          placeholder="Segunda"
+          type="text"
+          class="form-control"
+          id="opcaoD"
+          required
+          [(ngModel)]="votacao.opcaoD"
+          name="opcaoD"
+        />
+        <br>
+        <input
+          placeholder="Terceira"
+          type="text"
+          class="form-control"
+          id="opcaoT"
+          required
+          [(ngModel)]="votacao.opcaoT"
+          name="opcaoT"
+        />
+      </div>
+      <div class="form-group">
+        <label>Data Inicial:</label>
+        <input
+          class="form-control"
+          type="date"
+          id="dataInicio"
+          required
+          [(ngModel)]="votacao.dataInicio"
+          name="dataInicio"
+        />
+      </div>
+      <div class="form-group">
+        <label>Data Final:</label>
+        <input
+          class="form-control"
+          type="date"
+          id="dataFim"
+          required
+          [(ngModel)]="votacao.dataFim"
+          name="dataFim"
+        />
+      </div>
+      <button (click)="saveVotacao()" class="btn btn-success">Salvar</button>
+    </div>
+    <div *ngIf="submitted">
+      <h4>Enquente salva com sucesso!</h4>
+      <button class="btn btn-success" (click)="newVotacao()">Adicionar</button>
+    </div>
+  </div>
+</div>
